@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+  <!-- =====  BASIC PAGE NEEDS  ===== -->
+  <meta charset="utf-8">
+  <title>Dark look E-commerce Bootstrap Template</title>
+  <!-- =====  SEO MATE  ===== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="distribution" content="global">
+  <meta name="revisit-after" content="2 Days">
+  <meta name="robots" content="ALL">
+  <meta name="rating" content="8 YEARS">
+  <meta name="Language" content="en-us">
+  <meta name="GOOGLEBOT" content="NOARCHIVE">
+  <!-- =====  MOBILE SPECIFICATION  ===== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width">
+  <!-- =====  CSS  ===== -->
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/font-awesome.min.css }" />
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/bootstrap.css }" />
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/style.css }">
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/magnific-popup.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/owl.carousel.css}">
+  <link rel="shortcut icon" th:href="@{/static_client/images/favicon.png}">
+  <link rel="apple-touch-icon" th:href="@{/static_client/images/apple-touch-icon.png}">
+  <link rel="apple-touch-icon" sizes="72x72" th:href="@{/static_client/images/apple-touch-icon-72x72.png}">
+  <link rel="apple-touch-icon" sizes="114x114" th:href="@{/static_client/images/apple-touch-icon-114x114.png}">
+
+</head>
+<body>
+	<!-- =====  LODER  ===== -->
+  <div class="loder"></div>
+  <div class="wrapper">
+    <div id="subscribe-me" class="modal animated fade in" role="dialog" data-keyboard="true" tabindex="-1">
+      <div class="newsletter-popup"> <img class="offer" src="/finalweb/images/newsbg.jpg" alt="offer">
+        <div class="newsletter-popup-static newsletter-popup-top">
+          <div class="popup-text">
+            <div class="popup-title">50% <span>off</span></div>
+            <div class="popup-desc">
+              <div>Sign up and get 50% off your next Order</div>
+            </div>
+          </div>
+          <form onsubmit="return  validatpopupemail();" method="post">
+            <div class="form-group required">
+              <input type="email" name="email-popup" id="email-popup" placeholder="Enter Your Email" class="form-control input-lg" required />
+              <button type="submit" class="btn btn-default btn-lg" id="email-popup-submit">Subscribe</button>
+              <label class="checkme">
+                <input type="checkbox" value="" id="checkme" /> Dont show again</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- =====  HEADER START  ===== -->
+    
+    <div th:replace="/client/common/header :: header"></div>
+    
+    <!-- =====  HEADER END  ===== -->
+    <!-- =====  BANNER STRAT  ===== -->
+    <div class="banner">
+      <div class="main-banner owl-carousel">
+        <div class="item"><a href="#"><img src="/finalweb/images/main_banner1.jpg" alt="Main Banner" class="img-responsive" /></a></div>
+        <div class="item"><a href="#"><img src="/finalweb/images/main_banner2.jpg" alt="Main Banner" class="img-responsive" /></a></div>
+      </div>
+    </div>
+    <!-- =====  BANNER END  ===== -->
+    <!-- =====  CONTAINER START  ===== -->
+    <div class="container">
+      <!-- =====  SUB BANNER  STRAT ===== -->
+      <div class="row">
+        <div class="col-sm-3 mt_20 cms-icon ">
+          <div class="feature-i-left ptb_30 ">
+            <div class="icon-right Shipping"></div>
+            <h6>Free Shipping</h6>
+            <p>Free dedlivery worldwide</p>
+          </div>
+        </div>
+        <div class="col-sm-3 mt_20 cms-icon ">
+          <div class="feature-i-left ptb_30 ">
+            <div class="icon-right Order"></div>
+            <h6>Order Onlivne</h6>
+            <p>Hours : 8am - 11pm</p>
+          </div>
+        </div>
+        <div class="col-sm-3 mt_20 cms-icon ">
+          <div class="feature-i-left ptb_30 ">
+            <div class="icon-right Save"></div>
+            <h6>Shop And Save</h6>
+            <p>For All Spices & Herbs</p>
+          </div>
+        </div>
+        <div class="col-sm-3 mt_20 cms-icon ">
+          <div class="feature-i-left ptb_30 ">
+            <div class="icon-right Safe"></div>
+            <h6>Safe Shoping</h6>
+            <p>Ensure genuine 100%</p>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+          
+	<!-- start body -->
+	<form th:action="@{/member/account-address/new-address}" method="post">
+		<div class="form-group">
+			<input type="text" name="name" id="username" tabindex="1" class="form-control" placeholder="Name" value="">
+		</div>
+		<div class="form-group">
+			<input type="text" name="phoneNumber" id="email" tabindex="1" class="form-control" placeholder="Phone Number" value="">
+		</div>
+        <div class="form-group">
+             <input type="text" name="city" id="password2" tabindex="2" class="form-control" placeholder="City">
+        </div>
+        <div class="form-group">
+             <input type="text" name="district" id="confirm-password" tabindex="2" class="form-control" placeholder="District">
+        </div>
+        <div class="form-group">
+             <input type="text" name="address" id="confirm-password" tabindex="2" class="form-control" placeholder="Address">
+        </div>
+        <div class="form-group">
+        	<div class="row">
+		         <div class="col-sm-6 col-sm-offset-3">
+		         	<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Add Address">
+		         </div>
+      		</div>
+      	</div>
+	</form>
+	<!-- end body -->
+             
+	<div class="col-sm-12 mtb_10">
+          <!-- =====  Blog ===== -->
+          <div id="Blog" class="mt_50">
+            <div class="heading-part mb_10 ">
+              <h2 class="main_title">Latest News</h2>
+            </div>
+            <div class="blog-contain box">
+              <div class="blog owl-carousel ">
+                <div class="item">
+                  <div class="box-holder">
+                    <div class="thumb post-img"><a href="#"> <img src="/finalweb/images/blog/blog_img_01.jpg" alt="themini"> </a>
+                      <div class="date-time text-center">
+                        <div class="day"> 11</div>
+                        <div class="month">Aug</div>
+                      </div>
+                      <div class="post-image-hover"> </div>
+                      <div class="post-info">
+                        <h6 class="mb_10 text-uppercase"> <a href="single_blog.html">Fashions fade, style is eternal</a> </h6>
+                        <p>Aliquam egestas pellentesque est. Etiam a orci Nulla id enim feugiat ligula ullamcorper scelerisque. Morbi eu luctus nisl.</p>
+                        <div class="view-blog">
+                          <div class="write-comment pull-left"> <a href="single_blog.html"> 0 Comments</a> </div>
+                          <div class="read-more pull-right"> <a href="single_blog.html"> <i class="fa fa-link"></i> read more</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="box-holder">
+                    <div class="thumb post-img"><a href="#"> <img src="/finalweb/images/blog/blog_img_02.jpg" alt="themini"> </a>
+                      <div class="date-time text-center">
+                        <div class="day"> 11</div>
+                        <div class="month">Aug</div>
+                      </div>
+                      <div class="post-image-hover"> </div>
+                      <div class="post-info">
+                        <h6 class="mb_10 text-uppercase"> <a href="single_blog.html">Fashions fade, style is eternal</a> </h6>
+                        <p>Aliquam egestas pellentesque est. Etiam a orci Nulla id enim feugiat ligula ullamcorper scelerisque. Morbi eu luctus nisl.</p>
+                        <div class="view-blog">
+                          <div class="write-comment pull-left"> <a href="single_blog.html"> 0 Comments</a> </div>
+                          <div class="read-more pull-right"> <a href="single_blog.html"> <i class="fa fa-link"></i> read more</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="box-holder">
+                    <div class="thumb post-img"><a href="#"> <img src="/finalweb/images/blog/blog_img_03.jpg" alt="themini"> </a>
+                      <div class="date-time text-center">
+                        <div class="day"> 11</div>
+                        <div class="month">Aug</div>
+                      </div>
+                      <div class="post-image-hover"> </div>
+                      <div class="post-info">
+                        <h6 class="mb_10 text-uppercase"> <a href="single_blog.html">Fashions fade, style is eternal</a> </h6>
+                        <p>Aliquam egestas pellentesque est. Etiam a orci Nulla id enim feugiat ligula ullamcorper scelerisque. Morbi eu luctus nisl.</p>
+                        <div class="view-blog">
+                          <div class="write-comment pull-left"> <a href="single_blog.html"> 0 Comments</a> </div>
+                          <div class="read-more pull-right"> <a href="single_blog.html"> <i class="fa fa-link"></i> read more</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="box-holder">
+                    <div class="thumb post-img"><a href="#"> <img src="/finalweb/images/blog/blog_img_04.jpg" alt="themini"> </a>
+                      <div class="date-time text-center">
+                        <div class="day"> 11</div>
+                        <div class="month">Aug</div>
+                      </div>
+                      <div class="post-image-hover"> </div>
+                      <div class="post-info">
+                        <h6 class="mb_10 text-uppercase"> <a href="single_blog.html">Fashions fade, style is eternal</a> </h6>
+                        <p>Aliquam egestas pellentesque est. Etiam a orci Nulla id enim feugiat ligula ullamcorper scelerisque. Morbi eu luctus nisl.</p>
+                        <div class="view-blog">
+                          <div class="write-comment pull-left"> <a href="single_blog.html"> 0 Comments</a> </div>
+                          <div class="read-more pull-right"> <a href="single_blog.html"> <i class="fa fa-link"></i> read more</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- =====  Blog end ===== -->
+          </div>
+        </div>
+      </div>
+      <!-- =====  SUB BANNER END  ===== -->
+      <div id="brand_carouse" class="ptb_60 text-center">
+        <div class="type-01">
+          <div class="heading-part mb_10 ">
+            <h2 class="main_title">Brand Logo</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="brand owl-carousel ptb_20">
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand1.png" alt="Disney" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand2.png" alt="Dell" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand3.png" alt="Harley" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand4.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand5.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand6.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand7.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand8.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand9.png" alt="Canon" class="img-responsive" /></a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- =====  CONTAINER END  ===== -->
+    <!-- =====  FOOTER START  ===== -->
+    	<div th:replace="/client/common/footer :: footer"></div>
+    <!-- =====  FOOTER END  ===== -->
+  </div>
+  <a id="scrollup"></a>
+  <script th:src="@{/static_client/js/jQuery_v3.1.1.min.js}"></script>
+  <script th:src="@{/static_client/js/owl.carousel.min.js}"></script>
+  <script th:src="@{/static_client/js/bootstrap.min.js}"></script>
+  <script th:src="@{/static_client/js/jquery.magnific-popup.js}"></script>
+  <script th:src="@{/static_client/js/jquery.firstVisitPopup.js}"></script>
+  <script th:src="@{/static_client/js/custom.js}"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <!-- =====  BASIC PAGE NEEDS  ===== -->
+  <meta charset="utf-8">
+  <title>Dark look E-commerce Bootstrap Template</title>
+  <!-- =====  SEO MATE  ===== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="distribution" content="global">
+  <meta name="revisit-after" content="2 Days">
+  <meta name="robots" content="ALL">
+  <meta name="rating" content="8 YEARS">
+  <meta name="Language" content="en-us">
+  <meta name="GOOGLEBOT" content="NOARCHIVE">
+  <!-- =====  MOBILE SPECIFICATION  ===== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width">
+  <!-- =====  CSS  ===== -->
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/font-awesome.min.css }" />
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/bootstrap.css }" />
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/style.css }">
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/magnific-popup.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/static_client/css/owl.carousel.css}">
+  <link rel="shortcut icon" th:href="@{/static_client/images/favicon.png}">
+  <link rel="apple-touch-icon" th:href="@{/static_client/images/apple-touch-icon.png}">
+  <link rel="apple-touch-icon" sizes="72x72" th:href="@{/static_client/images/apple-touch-icon-72x72.png}">
+  <link rel="apple-touch-icon" sizes="114x114" th:href="@{/static_client/images/apple-touch-icon-114x114.png}">
+</head>
+
+<body>
+  <!-- =====  LODER  ===== -->
+  <div class="loder"></div>
+  <div class="wrapper">
+    <!-- =====  HEADER START  ===== -->
+    <div th:replace="/client/common/header :: header"></div>
+    <!-- =====  HEADER END  ===== -->
+    <!-- =====  CONTAINER START  ===== -->
+    <div class="container">
+      <div class="row ">
+        <!-- =====  BANNER STRAT  ===== -->
+        <div class="col-sm-12">
+          <div class="breadcrumb ptb_20">
+            <h1>Products</h1>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li class="active">Products</li>
+            </ul>
+          </div>
+        </div>
+        <!-- =====  BREADCRUMB END===== -->
+        <div id="column-left" class="col-sm-4 col-lg-3 ">
+          <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
+            <div class="nav-responsive">
+              <div class="heading-part">
+                <h2 class="main_title">Top category</h2>
+              </div>
+              <ul class="nav  main-navigation collapse in">
+                <li><a href="#">Appliances</a></li>
+                <li><a href="#">Mobile Phones</a></li>
+                <li><a href="#">Tablet PC & Accessories</a></li>
+                <li><a href="#">Consumer Electronics</a></li>
+                <li><a href="#">Computers & Networking</a></li>
+                <li><a href="#">Electrical & Tools</a></li>
+                <li><a href="#">Apparel</a></li>
+                <li><a href="#">Bags & Shoes</a></li>
+                <li><a href="#">Toys & Hobbies</a></li>
+                <li><a href="#">Watches & Jewelry</a></li>
+                <li><a href="#">Home & Garden</a></li>
+                <li><a href="#">Health & Beauty</a></li>
+                <li><a href="#">Outdoors & Sports</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter left-sidebar-widget mb_50">
+            <div class="heading-part mtb_20 ">
+              <h2 class="main_title">Refinr Search</h2>
+            </div>
+            <div class="filter-block">
+              <p>
+                <label for="amount">Price range:</label>
+                <input type="text" id="amount" readonly>
+              </p>
+              <div id="slider-range" class="mtb_20"></div>
+              <div class="list-group">
+                <div class="list-group-item mb_10">
+                  <label>Color</label>
+                  <div id="filter-group1">
+                    <div class="checkbox">
+                      <label>
+                        <input value="" type="checkbox"> Red (10)</label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input value="" type="checkbox"> Green (06)</label>
+                    </div>
+                    <div class="checkbox ">
+                      <label>
+                        <input value="" type="checkbox"> Blue(09)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item mb_10">
+                  <label>Size</label>
+                  <div id="filter-group3">
+                    <div class="checkbox">
+                      <label>
+                        <input value="" type="checkbox"> Big (3)</label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input value="" type="checkbox"> Medium (2)</label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input value="" type="checkbox"> Small (1)</label>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn">Refine Search</button>
+              </div>
+            </div>
+          </div>
+          <div class="left_banner left-sidebar-widget mb_50"> <a href="#"><img src="/finalweb/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+          <div class="left-special left-sidebar-widget mb_50">
+            <div class="heading-part mb_10 ">
+              <h2 class="main_title">Top Products</h2>
+            </div>
+            <div id="left-special" class="owl-carousel">
+              <ul class="row ">
+<!--                 <div > -->
+<!--               		<li class="item product-layout-left mb_20"> -->
+<!-- 	                  <div class="product-list col-xs-4"> -->
+<!-- 	                    <div class="product-thumb"> -->
+<!-- 	                      <div class="image product-imageblock"> <a href="/finalweb/client/product-detail?idP=${product.id }"> <img class="img-responsive" title="iPod Classic" alt="${product.name }" src="/finalweb/download?image=${product.image }"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/finalweb/download?image=${product.image }"> </a> </div> -->
+<!-- 	                    </div> -->
+<!-- 	                  </div> -->
+<!-- 	                  <div class="col-xs-8"> -->
+<!-- 	                    <div class="caption product-detail"> -->
+<!-- 	                      <h6 class="product-name"><a href="#">${product.name }</a></h6> -->
+<!-- 	                      <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span> </div> -->
+<!-- 	                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>${product.price }</span> -->
+<!-- 	                      </span> -->
+<!-- 	                    </div> -->
+<!-- 	                  </div> -->
+<!-- 	                </li> -->
+<!--               	</div> -->
+                
+              </ul>
+              <ul class="row ">
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product1.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product1-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span> </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product2.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product2-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span> </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span> </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8 col-lg-9 mtb_20">
+          <div class="category-page-wrapper mb_30">
+            <div class="list-grid-wrapper pull-left">
+              <div class="btn-group btn-list-grid">
+                <button type="button" id="grid-view" class="btn btn-default grid-view active"></button>
+                <button type="button" id="list-view" class="btn btn-default list-view"></button>
+              </div>
+            </div>
+            	<form method="get" th:action="@{/list-product}">
+		            <div class="page-wrapper pull-right">
+		              <button type="submit">Tìm :</button>
+		            </div>
+		            <div class="sort-wrapper pull-right">
+		              <label class="control-label" for="input-sort">Category :</label>
+		              <div class="sort-inner">
+		                <select name="nameCategory" id="input-sort" class="form-control">
+		                  <option th:each="category: ${listCategoryDTOs}" th:value="${category.name}" th:text="${category.name}"></option>
+		                </select>
+		              </div>
+		              <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+		            </div>
+		            <div class="sort-wrapper pull-right">
+		              <label class="control-label" for="input-sort">Price :</label>
+		              <div class="sort-inner">
+		                <select name="priceProduct" id="input-sort" class="form-control">
+		                  <option value="default">Default</option>
+		                  <option value="smaller1">Dưới 100$</option>
+		                  <option value="between1and2">100-200 $</option>
+		                  <option value="between2and3">200-300$</option>
+		                  <option value="between3and4">300-400$</option>
+		                  <option value="between4and5">400-500$</option>
+		                  <option value="biger5">Trên 500$</option>
+		                </select>
+		              </div>
+		              <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+		            </div>
+				</form>
+          </div>
+          <div class="row">
+          	<div class="product-grid" th:each="product: ${listProductDTOs}">
+          		<div class="product-layout product-grid col-md-4 col-xs-6 ">
+	              <div class="item">
+	                <div class="product-thumb clearfix mb_30">
+	                  <div class="image product-imageblock"> <a th:href="@{'/product-detail?id='+${product.id}}"> <img data-name="product_image" th:src="@{'/download?avatar='+${product.image} }" th:alt="${product.name}" th:title="${product.name}" class="img-responsive"> <img th:src="@{'/download?avatar='+${product.image} }" th:alt="${product.name}" th:title="${product.name}" class="img-responsive"> </a>
+	                    <div class="button-group text-center">
+	                      <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
+	                      <div class="quickview"><a href="#"><span>Quick View</span></a></div>
+	                      <div class="compare"><a href="#"><span>Compare</span></a></div>
+	                      <div class="add-to-cart"><a th:href="@{'/add-to-cart?id='+${product.id } }">Add</a></div>
+	                    </div>
+	                  </div>
+	                  <div class="caption product-detail text-center">
+	                    <h6 data-name="product_name" class="product-name mt_20"><a href="#" title="Casual Shirt With Ruffle Hem" th:text="${product.name }"></a></h6>
+	                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span> </div>
+	                    <span class="price"><span class="amount"><span class="currencySymbol" th:text="'$'+${product.price }"></span></span>
+	                    </span>
+	                    <p class="product-desc mt_20 mb_60"> More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.Cover Flow. Browse through your music collection by flipping..</p>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+          	</div>  
+                  
+          </div>
+          <div class="pagination-nav text-center mt_50">
+            <ul>
+            	<li th:each="i : ${#numbers.sequence( 1, result)}" th:class="${i == currentPage ? 'active' : '' }"><a  th:href="@{'/list-product?page='+${i} }" th:text="${i}"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="brand_carouse" class="ptb_30 text-center">
+        <div class="type-01">
+          <div class="heading-part mb_10 ">
+            <h2 class="main_title">Brand Logo</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="brand owl-carousel ptb_20">
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand1.png" alt="Disney" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand2.png" alt="Dell" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand3.png" alt="Harley" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand4.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand5.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand6.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand7.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand8.png" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="/finalweb/images/brand/brand9.png" alt="Canon" class="img-responsive" /></a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- =====  CONTAINER END  ===== -->
+    <!-- =====  FOOTER START  ===== -->
+   		<div th:replace="/client/common/footer :: footer"></div>
+    <!-- =====  FOOTER END  ===== -->
+  </div>
+  <a id="scrollup"></a>
+  <script th:src="@{/static_client/js/jQuery_v3.1.1.min.js}"></script>
+  <script th:src="@{/static_client/js/owl.carousel.min.js}"></script>
+  <script th:src="@{/static_client/js/bootstrap.min.js}"></script>
+  <script th:src="@{/static_client/js/jquery.magnific-popup.js}"></script>
+  <script th:src="@{/static_client/js/custom.js}"></script>
+  <script th:src="@{/static_client/js/jquery-ui.js}"></script>
+   <script> 
+   $(function() {
+     $("#slider-range").slider({
+       range: true,
+       min: 0,
+       max: 500,
+       values: [75, 300],
+       slide: function(event, ui) {
+         $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+       }
+     });
+     $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+       " - $" + $("#slider-range").slider("values", 1));
+   });
+   </script> 
+</body>
+
+</html>

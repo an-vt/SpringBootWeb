@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+	
+	<!-- Bootstrap -->
+    <link th:href="@{/static_admin/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link th:href="@{/static_admin/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+    <!-- NProgress -->
+    <link th:href="@{/static_admin/vendors/nprogress/nprogress.css}" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link th:href="@{/static_admin/build/css/custom.min.css}" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- group_menu -->
+		            <div th:replace="/admin/common/group_menu :: group_menu"></div>
+		            <!-- /group_menu -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+        	<div th:replace="/admin/common/top_navigation :: top_navigation"></div>
+        	<!-- /top navigation -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Sửa thành viên</h3>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <form th:action="@{/admin/user/edit}" method="post" th:object="${userDTO}" enctype="multipart/form-data" novalidate>
+                                        <span class="section">Thông tin thành viên</span>
+                                        <div>
+                                        	<input hidden="hidden" name="id" th:value="*{id}" />
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Họ và tên<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" th:value="*{name}" name="name" placeholder="Nhập họ và tên" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Tuổi<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" th:value="*{age}" name="age" data-validate-length-range="5,15" type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Email<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" th:value="*{email}" name="email" required="required" type="email" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Username<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" th:value="*{username}" type="text" name="username"/></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" th:value="*{password}" type="text" name="password"/></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Địa chỉ<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" th:value="*{address}" type="text" name="address"/></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Giới tính<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+	                                            <select th:if="*{gender == 'Nam'}" name="gender">
+													<option value="Nam" selected="selected">Nam</option>
+													<option value="Nữ">Nữ</option>
+												</select>
+												<select th:if="*{gender == 'Nữ'}" name="gender">
+													<option value="Nam">Nam</option>
+													<option value="Nữ" selected="selected">Nữ</option>
+												</select>
+                                        	</div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Số điện thoại<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" th:value="*{phone}" type="number" name="phone" required='required'></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Vai trò<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select th:if="*{role == 'ROLE_ADMIN'}" name="role">
+													<option value="ROLE_ADMIN" selected="selected">ROLE_ADMIN</option>
+													<option value="ROLE_MEMBER">ROLE_MEMBER</option>
+												</select>
+												<select th:if="*{role == 'ROLE_MEMBER'}" name="role">
+													<option value="ROLE_ADMIN" >ROLE_ADMIN</option>
+													<option value="ROLE_MEMBER" selected="selected">ROLE_MEMBER</option>
+												</select>
+                                        	</div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Ảnh đại diện<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <img th:src="@{'/download?avatar='+${userDTO.avatar}}" width="100">
+												<input type="text" name="avatar" hidden="hidden" th:value="*{avatar}" class="form-control" accept="image/*"><br>
+												<label>Avatar: </label> 
+												<input type="file" name="file" class="form-control" accept="image/*"><br>
+                                        	</div>
+                                        </div>
+                                        <div class="ln_solid">
+                                            <div class="form-group">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <button type='submit' class="btn btn-primary">Sửa thành viên</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+            <!-- footer content -->
+        	<div th:replace="/admin/common/footer :: footer"></div>
+        	<!-- /footer content -->
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script th:src="@{/static_admin/vendors/validator/multifield.js}"></script>
+    <script th:src="@{/static_admin/vendors/validator/validator.js}"></script>
+
+    <!-- jQuery -->
+    <script th:src="@{/static_admin/vendors/jquery/dist/jquery.min.js}"></script>
+    <!-- Bootstrap -->
+    <script th:src="@{/static_admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+    <!-- FastClick -->
+    <script th:src="@{/static_admin/vendors/fastclick/lib/fastclick.js}"></script>
+    <!-- NProgress -->
+    <script th:src="@{/static_admin/vendors/nprogress/nprogress.js}"></script>
+    <!-- validator -->
+    <script src="@{/static_admin/vendors/validator/validator.js}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script th:src="@{/static_admin/build/js/custom.min.js}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+	
+	<!-- Bootstrap -->
+    <link th:href="@{/static_admin/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link th:href="@{/static_admin/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+    <!-- NProgress -->
+    <link th:href="@{/static_admin/vendors/nprogress/nprogress.css}" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link th:href="@{/static_admin/build/css/custom.min.css}" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- group_menu -->
+		            <div th:replace="/admin/common/group_menu :: group_menu"></div>
+		            <!-- /group_menu -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+        	<div th:replace="/admin/common/top_navigation :: top_navigation"></div>
+        	<!-- /top navigation -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Sửa thành viên</h3>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <form th:action="@{/admin/product/edit}" th:object="${productDTO}" method="post" enctype="multipart/form-data" novalidate>
+                                        <span class="section">Thông tin sản phẩm</span>
+                                        <div>
+											<input type="text" name="id" hidden="hidden" class="form-control" th:value="*{id}" /><br>
+										</div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Tên sản phẩm<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" name="name" th:value="*{name}" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Số lượng<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" name="quantity" th:value="*{quantity}" type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Giá<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" name="price" th:value="*{price}" required="required" type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Mô tả<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" type="text" name="description" th:value="*{description}"/></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Ảnh sản phẩm<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <img th:src="@{'/download?avatar='+${productDTO.image}}" width="100">
+												<input type="text" name="image" hidden="hidden" th:value="*{image}" class="form-control" accept="image/*"><br>
+												<label>Image : </label> 
+												<input type="file" name="file" class="form-control" accept="image/*"><br>
+                                        	</div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Loại sản phẩm<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select th:field="*{categoryDTO.id}">
+													<div th:each="category: ${listCategoryDTOs}">
+														<div th:if="*{categoryDTO.id} == ${category.id}">
+															<option th:value="${category.id}" selected="selected" th:text="${category.name}"></option>
+														</div>
+														<div th:unless="*{categoryDTO.id} == ${category.id}">
+															<option th:value="${category.id}" th:text="${category.name}"></option>
+														</div>
+													</div>
+												</select>
+                                        	</div>
+                                        </div>
+                                        <div class="ln_solid">
+                                            <div class="form-group">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <button type='submit' class="btn btn-primary">Sửa sản phẩm</button>
+                                                    <button type='reset' class="btn btn-success">Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+            <!-- footer content -->
+        	<div th:replace="/admin/common/footer :: footer"></div>
+        	<!-- /footer content -->
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script th:src="@{/admin/vendors/validator/multifield.js}"></script>
+    <script th:src="@{/admin/vendors/validator/validator.js}"></script>
+
+    <!-- jQuery -->
+    <script th:src="@{/static_admin/vendors/jquery/dist/jquery.min.js}"></script>
+    <!-- Bootstrap -->
+    <script th:src="@{/static_admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+    <!-- FastClick -->
+    <script th:src="@{/static_admin/vendors/fastclick/lib/fastclick.js}"></script>
+    <!-- NProgress -->
+    <script th:src="@{/static_admin/vendors/nprogress/nprogress.js}"></script>
+    <!-- validator -->
+    <script src="@{/static_admin/vendors/validator/validator.js}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script th:src="@{/static_admin/build/js/custom.min.js}"></script>
+
+</body>
+
+</html>

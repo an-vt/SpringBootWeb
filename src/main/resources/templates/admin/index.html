@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" th:href="@{/admin/images/favicon.ico}" type="image/ico" />
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link th:href="@{/static_admin/vendors/bootstrap/dist/css/bootstrap.min.css }" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link th:href="@{/static_admin/vendors/font-awesome/css/font-awesome.min.css }" rel="stylesheet">
+    <!-- NProgress -->
+    <link th:href="@{/static_admin/vendors/nprogress/nprogress.css }" rel="stylesheet">
+    <!-- iCheck -->
+    <link th:href="@{/static_admin/vendors/iCheck/skins/flat/green.css }" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link th:href="@{/static_admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css }" rel="stylesheet">
+    <!-- JQVMap -->
+    <link th:href="@{/static_admin/vendors/jqvmap/dist/jqvmap.min.css }" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link th:href="@{/static_admin/vendors/bootstrap-daterangepicker/daterangepicker.css }" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link th:href="@{/static_admin/build/css/custom.min.css }" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- group_menu -->
+            <div th:replace="/admin/common/group_menu :: group_menu"></div>
+            <!-- /group_menu -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        	<div th:replace="/admin/common/top_navigation :: top_navigation"></div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+      		
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        	<div th:replace="/admin/common/footer :: footer"></div>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script th:src="@{/static_admin/vendors/jquery/dist/jquery.min.js}"></script>
+    <!-- Bootstrap -->
+    <script th:src="@{/static_admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+    <!-- FastClick -->
+    <script th:src="@{/static_admin/vendors/fastclick/lib/fastclick.js}"></script>
+    <!-- NProgress -->
+    <script th:src="@{/static_admin/vendors/nprogress/nprogress.js}"></script>
+    <!-- Chart.js -->
+    <script th:src="@{/static_admin/vendors/Chart.js/dist/Chart.min.js}"></script>
+    <!-- gauge.js -->
+    <script th:src="@{/static_admin/vendors/gauge.js/dist/gauge.min.js}"></script>
+    <!-- bootstrap-progressbar -->
+    <script th:src="@{/static_admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js}"></script>
+    <!-- iCheck -->
+    <script th:src="@{/static_admin/vendors/iCheck/icheck.min.js}"></script>
+    <!-- Skycons -->
+    <script th:src="@{/static_admin/vendors/skycons/skycons.js}"></script>
+    <!-- Flot -->
+    <script th:src="@{/static_admin/vendors/Flot/jquery.flot.js}"></script>
+    <script th:src="@{/static_admin/vendors/Flot/jquery.flot.pie.js}"></script>
+    <script th:src="@{/static_admin/vendors/Flot/jquery.flot.time.js}"></script>
+    <script th:src="@{/static_admin/vendors/Flot/jquery.flot.stack.js}"></script>
+    <script th:src="@{/static_admin/vendors/Flot/jquery.flot.resize.js}"></script>
+    <!-- Flot plugins -->
+    <script th:src="@{/static_admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js}"></script>
+    <script th:src="@{/static_admin/vendors/flot-spline/js/jquery.flot.spline.min.js}"></script>
+    <script th:src="@{/static_admin/vendors/flot.curvedlines/curvedLines.js}"></script>
+    <!-- DateJS -->
+    <script th:src="@{/static_admin/vendors/DateJS/build/date.js}"></script>
+    <!-- JQVMap -->
+    <script th:src="@{/static_admin/vendors/jqvmap/dist/jquery.vmap.js}"></script>
+    <script th:src="@{/static_admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js}"></script>
+    <script th:src="@{/static_admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script th:src="@{/static_admin/vendors/moment/min/moment.min.js}"></script>
+    <script th:src="@{/static_admin/vendors/bootstrap-daterangepicker/daterangepicker.js}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script th:src="@{/static_admin/build/js/custom.min.js}"></script>
+	
+  </body>
+</html>

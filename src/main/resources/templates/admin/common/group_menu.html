@@ -1,0 +1,46 @@
+<div th:fragment="group_menu">	
+	<!-- menu profile quick info -->
+	<div class="profile clearfix">
+		<div class="profile_pic">
+			<img th:src="@{/static_admin/images/anh dai dien.jpg}" alt="..." class="img-circle profile_img">
+		</div>
+		<div class="profile_info">
+			<span>Welcome,</span>
+			<h2 th:text ="${#authentication.getPrincipal().getUsername()}"></h2>
+		</div>
+	</div>
+	<!-- /menu profile quick info -->
+	
+	<br />
+	
+	<!-- sidebar menu -->
+	<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+		<div class="menu_section">
+			<h3>General</h3>
+			<ul class="nav side-menu">
+				<li><a th:href="@{/admin/index}"><i class="fa fa-home"></i> Trang Chủ </a>
+				<li>
+					<a th:href="@{/admin/category/search}"><i class="fa fa-edit"></i> Quản lí loại sản phẩm </a>
+				</li>
+				<li><a><i class="fa fa-edit"></i> Quản lí sản phẩm <span
+						class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+						<li><a th:href="@{/admin/product/search}">Danh sách sản phẩm</a></li>
+						<li><a th:href="@{/admin/product/add}">Thêm sản phẩm</a></li>
+					</ul>
+				</li>
+				<li><a th:href="@{/admin/user/search}"><i class="fa fa-table"></i>Quản lí thành viên </a>
+				</li>
+				<li>
+					<a th:href="@{/admin/bill/search}"><i class="fa fa-table"></i>Quản lí hóa đơn </a>
+				</li>
+				<li>
+					<a th:href="@{/admin/coupon/search}"><i class="fa fa-table"></i>Quản lí Coupon</a>
+				</li>
+			</ul>
+		</div>
+	
+	</div>
+	<!-- /sidebar menu -->
+	
+</div>
