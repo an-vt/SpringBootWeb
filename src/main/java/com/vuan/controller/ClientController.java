@@ -66,7 +66,7 @@ public class ClientController {
 			model.addAttribute("listProductDTOs", listProductDTOs);
 		}
 
-		return "client/index";
+		return "templates/client/index";
 	} 
 	
 //	@GetMapping(value = "/member/home")
