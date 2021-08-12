@@ -10,7 +10,7 @@ public class AdminController {
 	
 	@GetMapping(value = "/admin")
 	public String AdminIndexGet() {
-		return "admin/index";
+		return "templates/admin/index";
 	}
 	
 	@GetMapping(value = "/login-admin")
