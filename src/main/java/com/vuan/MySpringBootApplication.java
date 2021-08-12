@@ -24,7 +24,8 @@ import com.vuan.utils.PasswordGenerator;
 public class MySpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MySpringBootApplication.class, args);
+//		SpringApplication.run(MySpringBootApplication.class, args);
+		System.out.println(PasswordGenerator.getHashString("1"));
 	}
 
 	@Autowired
@@ -90,15 +91,4 @@ public class MySpringBootApplication {
 	}
 	
 	
-//	@Bean
-//	public CorsConfigurationSource corsConfigurationSource() {
-//		CorsConfiguration configuration = new CorsConfiguration();
-//		configuration.setAllowedOrigins(Arrays.asList("*"));
-//		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-//		configuration.setAllowedHeaders(Arrays.asList("authorization", "content-type", "x-auth-token"));
-//		configuration.setExposedHeaders(Arrays.asList("x-auth-token"));
-//		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//		source.registerCorsConfiguration("/**", configuration);
-//		return source;
-//	}
 }
