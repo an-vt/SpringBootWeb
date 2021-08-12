@@ -290,7 +290,7 @@
                 </thead>
                 <tbody>
                 		<tr th:each="entry: ${session.cart}">
-	                    <td class="text-center"><a href="#"><img th:src="@{'/download?avatar='+${entry.value.productDTO.image}}" th:alt="${entry.value.productDTO.name }" th:title="${entry.value.productDTO.name }" width="80"></a></td>
+	                    <td class="text-center"><a href="#"><img th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${entry.value.productDTO.image}}" th:alt="${entry.value.productDTO.name }" th:title="${entry.value.productDTO.name }" width="80"></a></td>
 	                    <td class="text-left"><a th:href="@{'/product-detail?id='+${entry.key } }" th:text="${entry.value.productDTO.name }"></a></td>
 	                    <td class="text-left" th:text="${entry.value.productDTO.description }"></td>
 	                    <td class="text-left">

@@ -1,0 +1,13 @@
+cloud:
+    aws:
+      credentials:
+        access-key: AKIATTOQUUPCO4YJ52VJ
+        secret-key: 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
+      region:
+        static: ap-southeast-1
+      stack:
+        auto: false
+
+application:
+  bucket:
+    name: curnonwatch

@@ -117,7 +117,7 @@
 							<td th:text="${user.password}"></td>
 							<td th:text="${user.gender}"></td>
 							<td th:text="${user.address}"></td>
-							<td><img th:src="@{'/download?avatar='+${user.avatar} }" width="100"></td>
+							<td><img th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${user.avatar} }" width="100"></td>
 							<td th:text="${user.enabled}"></td>
 							<td>
 								<a th:href="@{'/admin/user/edit?id='+${user.id}}">Sửa</a> | <a th:href="@{'/admin/user/delete?id='+${user.id} +'&page='+${currentPage}+'&name='+${name}}">Xóa</a>

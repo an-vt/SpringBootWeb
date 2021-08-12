@@ -124,7 +124,7 @@
                 		<div class="product-grid" th:each="product: ${listProductDTOs}">
 		                    <div class="item">
 		                      <div class="product-thumb">
-		                        <div class="image product-imageblock"> <a th:href="@{'/product-detail?id='+${product.id}}"> <img data-name="product_image" th:src="@{'/download?avatar='+${product.image} }" alt="iPod Classic" title="iPod Classic" class="img-responsive"> <img th:src="@{'/download?avatar='+${product.image} }" alt="iPod Classic" title="iPod Classic" class="img-responsive"> </a>
+		                        <div class="image product-imageblock"> <a th:href="@{'/product-detail?id='+${product.id}}"> <img data-name="product_image" th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${product.image} }" alt="iPod Classic" title="iPod Classic" class="img-responsive"> <img th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${product.image} }" alt="iPod Classic" title="iPod Classic" class="img-responsive"> </a>
 		                          <div class="button-group text-center">
 		                            <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
 		                            <div class="quickview"><a href="#"><span>Quick View</span></a></div>

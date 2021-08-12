@@ -126,7 +126,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Ảnh đại diện<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <img th:src="@{'/download?avatar='+${userDTO.avatar}}" width="100">
+                                                <img th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${userDTO.avatar}}" width="100">
 												<input type="text" name="avatar" hidden="hidden" th:value="*{avatar}" class="form-control" accept="image/*"><br>
 												<label>Avatar: </label> 
 												<input type="file" name="file" class="form-control" accept="image/*"><br>

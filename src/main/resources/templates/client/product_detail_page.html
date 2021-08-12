@@ -351,7 +351,7 @@
         <div class="col-sm-8 col-lg-9 mtb_20">
           <div class="row mt_10 ">
             <div class="col-md-6">
-              <div><a class="thumbnails"> <img data-name="product_image" th:src="@{'/download?avatar='+${productDTO.image} }" alt="${productDTO.name}" /></a></div>
+              <div><a class="thumbnails"> <img data-name="product_image" th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${productDTO.image} }" alt="${productDTO.name}" /></a></div>
               <div id="product-thumbnail" class="owl-carousel">
                 <div class="item">
                   <div class="image-additional"><a class="thumbnail" href="/finalweb/images/product/product1.jpg" data-fancybox="group1"> <img src="/finalweb/images/product/product1.jpg" alt="" /></a></div>
@@ -471,7 +471,7 @@
 					                  <li class="comment">
 					                    <hr>
 					                    <article class="comment-body mtb_20">
-					                      <div class="comment-avatar"> <img alt="" th:src="@{'/download?avatar='+${review.userDTO.avatar} }"> </div>
+					                      <div class="comment-avatar"> <img alt="" th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${review.userDTO.avatar} }"> </div>
 					                      <div class="comment-main">
 					                        <h5 class="author-name"> <p class="comment-name" th:text="${review.userDTO.name}"></p> <small class="comment-date">8 days ago</small> </h5>
 					                        <div class="comment-reply pull-right"> <a href="#"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a> </div>
@@ -524,7 +524,7 @@
 					                  <li class="comment">
 					                    <hr>
 					                    <article class="comment-body mtb_20">
-					                      <div class="comment-avatar"> <img alt="" th:src="@{'/download?avatar='+${comment.userDTO.avatar} }"> </div>
+					                      <div class="comment-avatar"> <img alt="" th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${comment.userDTO.avatar} }"> </div>
 					                      <div class="comment-main">
 					                        <h5 class="author-name"> <p class="comment-name" th:text="${comment.userDTO.name}"></p> <small class="comment-date">8 days ago</small> </h5>
 					                        <div class="comment-reply pull-right"> <a href="#"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a> </div>

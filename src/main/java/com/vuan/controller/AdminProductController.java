@@ -26,6 +26,7 @@ import com.vuan.model.CategoryDTO;
 import com.vuan.model.ProductDTO;
 import com.vuan.service.CategoryService;
 import com.vuan.service.ProductService;
+import com.vuan.service.StorageService;
 
 @Controller
 public class AdminProductController {
@@ -34,6 +35,9 @@ public class AdminProductController {
 
 	@Autowired
 	CategoryService categoryService;
+	
+	@Autowired
+	StorageService storageService;
 
 	@GetMapping(value = "/admin/product/add")
 	public String AdminAddProductGet(Model model, HttpServletRequest request) {
@@ -46,32 +50,13 @@ public class AdminProductController {
 
 	@PostMapping(value = "/admin/product/add")
 	public String AdminAddProductPost(Model model, @ModelAttribute(value = "product") ProductDTO productDTO,
-			@RequestParam(name = "file") MultipartFile imagefile) {
+			@RequestParam(name = "file" ) MultipartFile imagefile) {
 
 		System.out.println("category id :" + productDTO.getCategoryDTO().getId());
 		System.out.println("price :" + productDTO.getPrice());
 		if (imagefile.getSize() > 0) {
-			System.out.println("Them anh cho product");
-			String originalFilename = imagefile.getOriginalFilename();
-			int lastIndex = originalFilename.lastIndexOf(".");
-			String ext = originalFilename.substring(lastIndex);
-
-			String avatarFilename = System.currentTimeMillis() + ext;
-			File newfile = new File("D:\\file\\user\\" + avatarFilename);
-			FileOutputStream fileOutputStream;
-			try {
-				fileOutputStream = new FileOutputStream(newfile);
-				fileOutputStream.write(imagefile.getBytes());
-				fileOutputStream.close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			productDTO.setImage(avatarFilename);
-		} else if (imagefile.getSize() == 0) {
-			System.out.println("khong them anh cho product");
-			productDTO.setImage(null);
+			String image = storageService.uploadFile(imagefile);
+			productDTO.setImage(image);
 		}
 		CategoryDTO categoryDTO = categoryService.get(productDTO.getCategoryDTO().getId());
 		System.out.println("categoryDTO :" + categoryDTO.getId() + categoryDTO.getName());
@@ -92,39 +77,13 @@ public class AdminProductController {
 
 	@PostMapping(value = "/admin/product/edit")
 	public String AdminEditProductPost(Model model, @ModelAttribute(value = "productDTO") ProductDTO productDTO,
-			@RequestParam(name = "file") MultipartFile imagefile) {
+			@RequestParam(name = "file" ,required = false) MultipartFile imagefile) {
 
 		if (imagefile.getSize() > 0) {
-			System.out.println("thay doi anh cho product");
-			// ten avatar
-			String originalFilename = imagefile.getOriginalFilename();
-			System.out.println("ten avatar :" + originalFilename);
-			//
-			int lastIndex = originalFilename.lastIndexOf(".");
-			System.out.println(lastIndex);
-			// duoi anh .png ,.jpg
-			String ext = originalFilename.substring(lastIndex);
-			System.out.println(ext);
-			System.out.println("So ngau nhien :" + System.currentTimeMillis());
-			// lau so ngau nhien trong system
-			String avatarFilename = System.currentTimeMillis() + ext;
-			File newfile = new File("D:\\file\\user\\" + avatarFilename);
-			FileOutputStream fileOutputStream;
-			try {
-				fileOutputStream = new FileOutputStream(newfile);
-				fileOutputStream.write(imagefile.getBytes());
-				fileOutputStream.close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			productDTO.setImage(avatarFilename);
-			productService.update(productDTO);
-		} else if (imagefile.getSize() == 0) {
-			System.out.println("khong thay doi anh cho product");
-			productService.update(productDTO);
+			String image = storageService.uploadFile(imagefile);
+			productDTO.setImage(image);
 		}
+		productService.update(productDTO);
 		return "redirect:/admin/product/search";
 	}
 

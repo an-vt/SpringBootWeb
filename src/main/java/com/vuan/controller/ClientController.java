@@ -32,7 +32,7 @@ import com.vuan.service.UserAddressService;
 import com.vuan.service.UserService;
 
 @Controller
-public class ClientController {
+public class ClientController { 
 	@Autowired
 	ProductService productService;
 	

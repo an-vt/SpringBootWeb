@@ -54,7 +54,7 @@ public class MySpringBootApplication {
 					.permitAll()
 					// cau hinh giao dien
 					.and().formLogin().loginPage("/login-admin").loginProcessingUrl("/admin/login-adminUrl")
-					.defaultSuccessUrl("/admin/index" ,true).failureUrl("/login-admin?e=error").and().logout()
+					.defaultSuccessUrl("/admin" ,true).failureUrl("/login-admin?e=error").and().logout()
 					.logoutUrl("/admin/logout").logoutSuccessUrl("/login-admin").permitAll()
 					// exeption
 					.and().exceptionHandling().accessDeniedPage("/login-admin?e=deny")

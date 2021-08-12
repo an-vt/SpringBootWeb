@@ -85,7 +85,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Ảnh sản phẩm<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <img th:src="@{'/download?avatar='+${productDTO.image}}" width="100">
+                                                <img th:src="@{'https://api-curnon-springbooot.herokuapp.com/api/download/'+${productDTO.image}}" width="100">
 												<input type="text" name="image" hidden="hidden" th:value="*{image}" class="form-control" accept="image/*"><br>
 												<label>Image : </label> 
 												<input type="file" name="file" class="form-control" accept="image/*"><br>
@@ -94,7 +94,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Loại sản phẩm<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select th:field="*{categoryDTO.id}">
+                                                <select name="categoryDTO.id" th:field="*{categoryDTO.id}">
 													<div th:each="category: ${listCategoryDTOs}">
 														<div th:if="*{categoryDTO.id} == ${category.id}">
 															<option th:value="${category.id}" selected="selected" th:text="${category.name}"></option>

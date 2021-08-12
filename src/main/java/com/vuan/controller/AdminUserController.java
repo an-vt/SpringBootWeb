@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vuan.model.UserDTO;
+import com.vuan.service.StorageService;
 import com.vuan.service.UserService;
 import com.vuan.vadilator.UserDTOVadilator;
 
@@ -28,6 +29,9 @@ public class AdminUserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private StorageService storageService;
 
 	@Autowired
 	private UserDTOVadilator userDTOVadilator;
@@ -43,35 +47,13 @@ public class AdminUserController {
 			@RequestParam(name = "file") MultipartFile imagefile, BindingResult bindingResult) {
 		userDTOVadilator.validate(userDTO, bindingResult);
 		if (bindingResult.hasErrors()) {
-			System.out.println("da xay ra loi roi huhu");
 			model.addAttribute("userDTO", userDTO);
 			return "admin/user/AddUser";
 		} else {
-			System.out.println("khong xay ra loi hihi");
 			if (imagefile.getSize() > 0) {
-				System.out.println("Them anh cho user");
-				String originalFilename = imagefile.getOriginalFilename();
-				int lastIndex = originalFilename.lastIndexOf(".");
-				String ext = originalFilename.substring(lastIndex);
-
-				String avatarFilename = System.currentTimeMillis() + ext;
-				File newfile = new File("D:\\file\\user\\" + avatarFilename);
-				FileOutputStream fileOutputStream;
-				try {
-					fileOutputStream = new FileOutputStream(newfile);
-					fileOutputStream.write(imagefile.getBytes());
-					fileOutputStream.close();
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				userDTO.setAvatar(avatarFilename);
-			} else if (imagefile.getSize() == 0) {
-				System.out.println("khong them anh cho user");
-				userDTO.setAvatar(null);
-			}
-
+				String image = storageService.uploadFile(imagefile);
+				userDTO.setAvatar(image);
+			} 
 			userDTO.setEnabled(true);
 			userService.add(userDTO);
 			return "redirect:/admin/user/search";
@@ -97,38 +79,11 @@ public class AdminUserController {
 			@RequestParam(name = "file") MultipartFile imagefile) {
 		System.out.println("role userDTO " + userDTO.getRole());
 		if (imagefile.getSize() > 0) {
-			System.out.println("thay doi anh cho user");
-			// ten avatar
-			String originalFilename = imagefile.getOriginalFilename();
-			System.out.println("ten avatar :" + originalFilename);
-			//
-			int lastIndex = originalFilename.lastIndexOf(".");
-			System.out.println(lastIndex);
-			// duoi anh .png ,.jpg
-			String ext = originalFilename.substring(lastIndex);
-			System.out.println(ext);
-			System.out.println("So ngau nhien :" + System.currentTimeMillis());
-			// lau so ngau nhien trong system
-			String avatarFilename = System.currentTimeMillis() + ext;
-			File newfile = new File("D:\\file\\user\\" + avatarFilename);
-			FileOutputStream fileOutputStream;
-			try {
-				fileOutputStream = new FileOutputStream(newfile);
-				fileOutputStream.write(imagefile.getBytes());
-				fileOutputStream.close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			userDTO.setEnabled(true);
-			userDTO.setAvatar(avatarFilename);
-			userService.update(userDTO);
-		} else if (imagefile.getSize() == 0) {
-			System.out.println("khong thay doi anh cho user");
-			userDTO.setEnabled(true);
-			userService.update(userDTO);
+			String image = storageService.uploadFile(imagefile);
+			userDTO.setAvatar(image);
 		}
+		userDTO.setEnabled(true);
+		userService.update(userDTO);
 		return "redirect:/admin/user/search";
 	}
 
